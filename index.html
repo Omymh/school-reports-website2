@@ -34,7 +34,7 @@
             overflow-x: hidden;
         }
         
-        /* الهيدر */
+        /* الهيدر المعدل - ديباجة نحيفة */
         .header-logo {
             background: white;
             position: sticky;
@@ -42,7 +42,7 @@
             z-index: 1000;
             box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
             border-bottom: 2px solid var(--light);
-            padding: 10px 0;
+            padding: 5px 0; /* تقليل الحشوة */
         }
         
         .header-logo .wrap {
@@ -56,7 +56,7 @@
         }
         
         .header-logo img {
-            height: 100px;
+            height: 60px; /* تقليل الارتفاع لجعل الديباجة نحيفة */
             width: auto;
             object-fit: contain;
         }
@@ -593,7 +593,7 @@
         /* تحسينات للشاشات المتوسطة والكبيرة */
         @media (min-width: 768px) {
             .header-logo img {
-                height: 140px;
+                height: 80px; /* تقليل الارتفاع في الشاشات الكبيرة */
             }
             
             .nav-btn {
@@ -663,7 +663,7 @@
         
         @media (max-width: 480px) {
             .header-logo img {
-                height: 80px;
+                height: 50px; /* تقليل الارتفاع في الشاشات الصغيرة */
             }
             
             .nav {
