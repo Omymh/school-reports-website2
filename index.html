@@ -1024,7 +1024,7 @@
             });
         }
         
-        // تصدير تقرير النشاط
+        // تصدير تقرير النشاط - معدل لحل المشكلات
         function initializeActivityExport() {
             document.getElementById('exportActivity').addEventListener('click', async function(e) {
                 e.preventDefault();
@@ -1048,7 +1048,7 @@
                         left: 0;
                         width: 800px;
                         background: white;
-                        padding: 40px;
+                        padding: 20px;
                         z-index: 10000;
                         box-shadow: 0 0 20px rgba(0,0,0,0.3);
                         font-family: 'Tajawal', sans-serif;
@@ -1057,44 +1057,44 @@
                     
                     // إنشاء محتوى التقرير مع تحسين عرض الصور
                     printElement.innerHTML = `
-                        <!-- الديباجة -->
-                        <div style="text-align: center; margin-bottom: 30px;">
+                        <!-- الديباجة - معدلة لتكون أصغر -->
+                        <div style="text-align: center; margin-bottom: 20px;">
                             <img src="26.png" alt="ديباجة الابتدائية السابعة بمحافظة الوجه" 
-                                 style="width: 100%; height: 150px; object-fit: contain; object-position: center; margin-bottom: 25px;">
-                            <h1 style="color: #047857; font-size: 32px; margin: 0; font-weight: 900; border-bottom: 3px solid #10b981; padding-bottom: 15px;">
+                                 style="width: 100%; height: 80px; object-fit: contain; object-position: center; margin-bottom: 15px;">
+                            <h1 style="color: #047857; font-size: 24px; margin: 0; font-weight: 900; border-bottom: 2px solid #10b981; padding-bottom: 10px;">
                                 تقرير النشاط المدرسي
                             </h1>
                         </div>
         
                         <!-- معلومات النشاط -->
-                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
                             <tr>
-                                <td style="padding: 12px; border: 1px solid #e2e8f0; background: #f8fafc; font-weight: bold; width: 30%;">اسم البرنامج / النشاط</td>
-                                <td style="padding: 12px; border: 1px solid #e2e8f0;">${data.title}</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0; background: #f8fafc; font-weight: bold; width: 30%;">اسم البرنامج / النشاط</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">${data.title}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 12px; border: 1px solid #e2e8f0; background: #f8fafc; font-weight: bold;">المنفذ</td>
-                                <td style="padding: 12px; border: 1px solid #e2e8f0;">${data.owner}</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0; background: #f8fafc; font-weight: bold;">المنفذ</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">${data.owner}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 12px; border: 1px solid #e2e8f0; background: #f8fafc; font-weight: bold;">عدد المستفيدين</td>
-                                <td style="padding: 12px; border: 1px solid #e2e8f0;">${data.count || 'غير محدد'}</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0; background: #f8fafc; font-weight: bold;">عدد المستفيدين</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">${data.count || 'غير محدد'}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 12px; border: 1px solid #e2e8f0; background: #f8fafc; font-weight: bold;">التاريخ</td>
-                                <td style="padding: 12px; border: 1px solid #e2e8f0;">${data.date}</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0; background: #f8fafc; font-weight: bold;">التاريخ</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">${data.date}</td>
                             </tr>
                             <tr>
-                                <td style="padding: 12px; border: 1px solid #e2e8f0; background: #f8fafc; font-weight: bold;">المكان</td>
-                                <td style="padding: 12px; border: 1px solid #e2e8f0;">${data.place || 'غير محدد'}</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0; background: #f8fafc; font-weight: bold;">المكان</td>
+                                <td style="padding: 10px; border: 1px solid #e2e8f0;">${data.place || 'غير محدد'}</td>
                             </tr>
                         </table>
         
                         <!-- الأهداف -->
                         ${data.goals ? `
-                        <div style="margin-bottom: 25px;">
-                            <h4 style="color: #047857; font-size: 18px; margin-bottom: 10px; border-right: 4px solid #10b981; padding-right: 10px;">الأهداف</h4>
-                            <div style="padding: 15px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: #047857; font-size: 16px; margin-bottom: 8px; border-right: 3px solid #10b981; padding-right: 8px;">الأهداف</h4>
+                            <div style="padding: 12px; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0;">
                                 ${data.goals}
                             </div>
                         </div>
@@ -1102,23 +1102,23 @@
         
                         <!-- وصف النشاط -->
                         ${data.desc ? `
-                        <div style="margin-bottom: 25px;">
-                            <h4 style="color: #047857; font-size: 18px; margin-bottom: 10px; border-right: 4px solid #10b981; padding-right: 10px;">وصف النشاط</h4>
-                            <div style="padding: 15px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: #047857; font-size: 16px; margin-bottom: 8px; border-right: 3px solid #10b981; padding-right: 8px;">وصف النشاط</h4>
+                            <div style="padding: 12px; background: #f8fafc; border-radius: 6px; border: 1px solid #e2e8f0;">
                                 ${data.desc}
                             </div>
                         </div>
                         ` : ''}
         
-                        <!-- صور الشواهد - نسخة محسنة تضمن ظهور جميع الصور -->
+                        <!-- صور الشواهد - محسنة لضمان ظهور جميع الصور -->
                         ${witness.length > 0 ? `
-                        <div style="margin-bottom: 25px; page-break-inside: avoid;">
-                            <h4 style="color: #047857; font-size: 18px; margin-bottom: 15px; border-right: 4px solid #10b981; padding-right: 10px;">صور الشواهد</h4>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div style="margin-bottom: 20px; page-break-inside: avoid;">
+                            <h4 style="color: #047857; font-size: 16px; margin-bottom: 12px; border-right: 3px solid #10b981; padding-right: 8px;">صور الشواهد</h4>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                                 ${witness.map(w => `
-                                    <div style="text-align: center; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px; background: #f8fafc; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 250px;">
-                                        <img src="${w.url}" style="max-width: 100%; max-height: 200px; object-fit: contain; display: block; margin: 0 auto;">
-                                        <p style="margin-top: 10px; font-size: 14px; color: #64748b;">شاهد النشاط</p>
+                                    <div style="text-align: center; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px; background: #f8fafc; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;">
+                                        <img src="${w.url}" style="max-width: 100%; max-height: 150px; object-fit: contain; display: block; margin: 0 auto;">
+                                        <p style="margin-top: 8px; font-size: 12px; color: #64748b;">شاهد النشاط</p>
                                     </div>
                                 `).join('')}
                             </div>
@@ -1269,7 +1269,7 @@
             });
         }
         
-        // تصدير تقرير الحصص
+        // تصدير تقرير الحصص - معدل لحل المشكلات
         function initializeSessionsExport() {
             const btn = document.getElementById('exportSessions');
             if (!btn) return;
@@ -1287,7 +1287,7 @@
                     const printElement = document.createElement('div');
                     printElement.style.cssText = [
                         'position: fixed','top: 0','left: 0','width: 1000px',
-                        'background: #ffffff','padding: 40px','z-index: 10000',
+                        'background: #ffffff','padding: 20px','z-index: 10000',
                         "font-family: 'Tajawal', sans-serif",'direction: rtl'
                     ].join(';') + ';';
         
@@ -1295,40 +1295,40 @@
                     sessions.forEach((s, i) => {
                         rows += `
                             <tr>
-                                <td style="padding:10px;border:1px solid #ddd;text-align:center;">${i + 1}</td>
-                                <td style="padding:10px;border:1px solid #ddd;text-align:center;">${s.week || ''}</td>
-                                <td style="padding:10px;border:1px solid #ddd;text-align:center;">${s.day || ''}</td>
-                                <td style="padding:10px;border:1px solid #ddd;text-align:center;">${s.date || ''}</td>
-                                <td style="padding:10px;border:1px solid #ddd;text-align:center;">${s.className || ''}</td>
-                                <td style="padding:10px;border:1px solid #ddd;text-align:center;">${s.number || ''}</td>
-                                <td style="padding:10px;border:1px solid #ddd;text-align:center;">${s.teacher || ''}</td>
-                                <td style="padding:10px;border:1px solid #ddd;text-align:right;">${s.activities || ''}</td>
-                                <td style="padding:10px;border:1px solid #ddd;text-align:right;">${s.fields || ''}</td>
+                                <td style="padding:8px;border:1px solid #ddd;text-align:center;">${i + 1}</td>
+                                <td style="padding:8px;border:1px solid #ddd;text-align:center;">${s.week || ''}</td>
+                                <td style="padding:8px;border:1px solid #ddd;text-align:center;">${s.day || ''}</td>
+                                <td style="padding:8px;border:1px solid #ddd;text-align:center;">${s.date || ''}</td>
+                                <td style="padding:8px;border:1px solid #ddd;text-align:center;">${s.className || ''}</td>
+                                <td style="padding:8px;border:1px solid #ddd;text-align:center;">${s.number || ''}</td>
+                                <td style="padding:8px;border:1px solid #ddd;text-align:center;">${s.teacher || ''}</td>
+                                <td style="padding:8px;border:1px solid #ddd;text-align:right;">${s.activities || ''}</td>
+                                <td style="padding:8px;border:1px solid #ddd;text-align:right;">${s.fields || ''}</td>
                             </tr>`;
                     });
         
                     printElement.innerHTML = `
-                        <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;">
+                        <!-- الديباجة - معدلة لتكون أصغر -->
+                        <div style="text-align: center; margin-bottom: 15px;">
                             <img src="26.png" alt="ديباجة الابتدائية السابعة بمحافظة الوجه"
-                                 style="width:100%;height:150px;object-fit:contain;object-position:center;border-radius:6px;">
+                                 style="width:100%;height:80px;object-fit:contain;object-position:center;margin-bottom:10px;">
+                            <h1 style="color:#047857;font-size:24px;font-weight:900;border-bottom:2px solid #10b981;padding-bottom:10px;margin:0 0 12px 0;">
+                                تقرير حصص الانتظار
+                            </h1>
                         </div>
-        
-                        <h1 style="color:#047857;font-size:32px;font-weight:900;border-bottom:3px solid #10b981;padding-bottom:12px;margin:0 0 16px 0;">
-                            تقرير حصص الانتظار
-                        </h1>
         
                         <table style="width:100%;border-collapse:collapse;margin-top:10px;">
                             <thead>
                                 <tr style="background:#10b981;color:#fff;">
-                                    <th style="padding:12px;border:1px solid #ddd;">م</th>
-                                    <th style="padding:12px;border:1px solid #ddd;">الأسبوع</th>
-                                    <th style="padding:12px;border:1px solid #ddd;">اليوم</th>
-                                    <th style="padding:12px;border:1px solid #ddd;">التاريخ</th>
-                                    <th style="padding:12px;border:1px solid #ddd;">الصف</th>
-                                    <th style="padding:12px;border:1px solid #ddd;">الحصة</th>
-                                    <th style="padding:12px;border:1px solid #ddd;">المعلمة الغائبة</th>
-                                    <th style="padding:12px;border:1px solid #ddd;">ما تم تنفيذه</th>
-                                    <th style="padding:12px;border:1px solid #ddd;">المجال</th>
+                                    <th style="padding:10px;border:1px solid #ddd;">م</th>
+                                    <th style="padding:10px;border:1px solid #ddd;">الأسبوع</th>
+                                    <th style="padding:10px;border:1px solid #ddd;">اليوم</th>
+                                    <th style="padding:10px;border:1px solid #ddd;">التاريخ</th>
+                                    <th style="padding:10px;border:1px solid #ddd;">الصف</th>
+                                    <th style="padding:10px;border:1px solid #ddd;">الحصة</th>
+                                    <th style="padding:10px;border:1px solid #ddd;">المعلمة الغائبة</th>
+                                    <th style="padding:10px;border:1px solid #ddd;">ما تم تنفيذه</th>
+                                    <th style="padding:10px;border:1px solid #ddd;">المجال</th>
                                 </tr>
                             </thead>
                             <tbody>${rows}</tbody>
@@ -1337,7 +1337,12 @@
         
                     document.body.appendChild(printElement);
         
-                    const canvas = await html2canvas(printElement, { scale: 2, backgroundColor: '#ffffff', useCORS: true });
+                    const canvas = await html2canvas(printElement, { 
+                        scale: 2, 
+                        backgroundColor: '#ffffff', 
+                        useCORS: true,
+                        logging: false
+                    });
                     const imgData = canvas.toDataURL('image/jpeg', 0.95);
                     const { jsPDF } = window.jspdf;
                     const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
