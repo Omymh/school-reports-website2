@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>نموذج تقرير حصص الانتظار – نسخة ويب</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    <meta name="color-scheme" content="light dark" />
+    <style>
+      :root {
+        --accent: #69bf97;
+        --accent-dark: #46a87d;
+        --border: #d8e5dc;
+        --ink: #0f172a;
+        --paper: #ffffff;
+        --banner-bg: #e8f6ef;
+        --banner-ink: #116e4f;
+      }
+      body { background: #f6faf8; color: var(--ink); }
+      @media print {
+        .print\:hide { display: none !important; }
+        .print\:show { display: block !important; }
+        body { background: #ffffff !important; }
+      }
+      table { border-collapse: collapse; width: 100%; }
+      thead th { position: sticky; top: 0; z-index: 1; background: var(--paper); }
+      th, td { border: 1px solid var(--border); }
+    </style>
+  </head>
+  <body>
+    <div id="banner" class="print:show rounded-none md:rounded-2xl mx-auto my-3 md:my-6 max-w-6xl border" style="background: var(--banner-bg); color: var(--banner-ink); border-color: var(--border);">
+      <div class="px-4 py-4 md:px-6 md:py-5 flex items-center justify-between">
+        <div class="text-base md:text-lg font-bold">الثانوية السادسة والعشرون - تبوك</div>
+        <div class="print:hide">
+          <button id="exportBtn" class="px-3 py-2 rounded-xl text-sm font-semibold" style="background: var(--accent); color: white;">تصدير PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="root"></div>
+
+    <footer class="print:hide max-w-6xl mx-auto mt-8 mb-10 text-sm text-slate-600">
+      <div class="border-t pt-3" style="border-color: var(--border)">
+        <div>مديرة المدرسة: <strong>أماني آل عبشان</strong></div>
+        <div>تصميم الهيئة الإدارية: <strong>عيدة صلاح</strong>، <strong>منيرة العمراني</strong></div>
+      </div>
+    </footer>
+
+    <script type="text/babel">
+      const DAYS = ["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس"];
+
+      const Th = ({ children, className = "" }) => (
+        <th className={\`text-right px-3 py-2 text-xs font-semibold \${className}\`}>{children}</th>
+      );
+      const Td = ({ children, className = "" }) => (
+        <td className={\`px-2 py-2 align-top \${className}\`}>{children}</td>
+      );
+      const InlineInput = ({ value, onChange, aria }) => (
+        <input aria-label={aria} value={value} onChange={(e)=>onChange(e.target.value)} className="border-b border-[color:var(--border)] focus:border-[color:var(--accent-dark)] outline-none px-1 py-0.5 rounded-sm" />
+      );
+      const Select = ({ value, onChange, options, aria }) => (
+        <select aria-label={aria} value={value} onChange={(e)=>onChange(e.target.value)} className="w-full border rounded-lg px-2 py-1" style="border-color: var(--border)">
+          {options.map((op,i)=>(<option key={i} value={op}>{op}</option>))}
+        </select>
+      );
+      const Check = ({ label, checked, onChange }) => (
+        <label className="flex items-center gap-2 text-xs">
+          <input type="checkbox" checked={checked} onChange={(e)=>onChange(e.target.checked)} />
+          <span>{label}</span>
+        </label>
+      );
+
+      function emptyRow() {
+        return { day: "", date: "", grade: "", period: "", absentTeacher: "", executed: "", witness: "", domain: { basics: false, values: false, future: false } };
+      }
+      function newWeekTemplate() {
+        return { id: \`week-\${Date.now()}\`, title: "تقرير تنفيذ حصص الانتظار – الأسبوع", teacherName: "", rows: Array.from({ length: 5 }, (_, i) => ({ ...emptyRow(), day: DAYS[i] })) };
+      }
+
+      function ReportApp() {
+        const [weeks, setWeeks] = React.useState(() => {
+          const saved = localStorage.getItem("report-weeks-v5");
+          if (saved) { try { return JSON.parse(saved); } catch { return [newWeekTemplate()]; } }
+          return [newWeekTemplate()];
+        });
+
+        const printAreaRef = React.useRef(null);
+        React.useEffect(() => { localStorage.setItem("report-weeks-v5", JSON.stringify(weeks)); }, [weeks]);
+
+        const addWeek = () => setWeeks((w) => [...w, newWeekTemplate()]);
+        const removeWeek = (id) => setWeeks((w) => w.filter((wk) => wk.id !== id));
+        const addRow = (weekId) => setWeeks((w) => w.map((wk) => wk.id === weekId ? { ...wk, rows: [...wk.rows, emptyRow()] } : wk));
+        const removeRow = (weekId, idx) => setWeeks((w) => w.map((wk) => wk.id === weekId ? { ...wk, rows: wk.rows.filter((_, i) => i !== idx) } : wk));
+        const setWeekField = (weekId, field, value) => setWeeks((w) => w.map((wk) => (wk.id === weekId ? { ...wk, [field]: value } : wk)));
+        const setCell = (weekId, idx, path, value) => {
+          setWeeks((w) => w.map((wk) => {
+            if (wk.id !== weekId) return wk;
+            const rows = [...wk.rows];
+            const row = { ...rows[idx] };
+            if (path.startsWith("domain.")) { const key = path.split(".")[1]; row.domain = { ...row.domain, [key]: value }; }
+            else { row[path] = value; }
+            rows[idx] = row;
+            return { ...wk, rows };
+          }));
+        };
+
+        const exportPDF = async () => {
+          const area = printAreaRef.current; if (!area) return;
+          const clone = area.cloneNode(true);
+          clone.style.maxWidth = "794px";
+          const canvas = await window.html2canvas(clone, { scale: 2, useCORS: true });
+          const { jsPDF } = window.jspdf;
+          const imgData = canvas.toDataURL("image/jpeg", 0.95);
+          const pdf = new jsPDF("p", "mm", "a4");
+          const pageWidth = 210, pageHeight = 297;
+          const imgWidth = pageWidth, imgHeight = (canvas.height * imgWidth) / canvas.width;
+          let heightLeft = imgHeight, position = 0;
+          pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight, undefined, "FAST");
+          heightLeft -= pageHeight;
+          while (heightLeft > 0) {
+            position = heightLeft - imgHeight;
+            pdf.addPage();
+            pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight, undefined, "FAST");
+            heightLeft -= pageHeight;
+          }
+          pdf.save("تقرير-حصص-الانتظار.pdf");
+        };
+
+        React.useEffect(() => {
+          const btn = document.getElementById("exportBtn");
+          if (btn) btn.onclick = exportPDF;
+        }, [weeks]);
+
+        return (
+          <div className="p-4 md:p-6">
+            <div className="max-w-6xl mx-auto space-y-6">
+              <div className="print:hide flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2">
+                  <button onClick={addWeek} className="px-3 py-2 rounded-xl text-sm font-semibold text-white" style={{ background: "var(--accent)" }}>إضافة أسبوع</button>
+                </div>
+              </div>
+
+              <div ref={printAreaRef} className="space-y-4">
+                <div className="rounded-2xl border" style={{ background: "var(--banner-bg)", color: "var(--banner-ink)", borderColor: "var(--border)" }}>
+                  <div className="px-4 py-4 md:px-6 md:py-5 flex items-center justify-between">
+                    <div className="text-base md:text-lg font-bold">الثانوية السادسة والعشرون - تبوك</div>
+                  </div>
+                </div>
+
+                {weeks.map((wk) => (
+                  <section key={wk.id} className="bg-white rounded-2xl border overflow-hidden" style={{ borderColor: "var(--border)" }}>
+                    <div className="print:hide flex items-center justify-start gap-3 p-4 border-b" style={{ borderColor: "var(--border)" }}>
+                      <span className="text-sm text-slate-700">اسم المعلمة:</span>
+                      <InlineInput aria="اسم المعلمة" value={wk.teacherName || ""} onChange={(v)=>setWeekField(wk.id, "teacherName", v)} />
+                    </div>
+
+                    <div className="p-4">
+                      <table className="text-sm bg-white">
+                        <thead>
+                          <tr>
+                            <Th>#</Th>
+                            <Th>اليوم</Th>
+                            <Th>التاريخ</Th>
+                            <Th>الصف</Th>
+                            <Th>الحصة</Th>
+                            <Th>المعلمة الغائبة</Th>
+                            <Th>ما تم تنفيذه</Th>
+                            <Th>الشاهد</Th>
+                            <Th>المجال</Th>
+                            <Th className="print:hide">إجراءات</Th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {wk.rows.map((r, idx) => (
+                            <tr key={idx}>
+                              <Td className="text-slate-500">{idx + 1}</Td>
+                              <Td><Select aria="اليوم" value={r.day} onChange={(v)=>setCell(wk.id, idx, "day", v)} options={["", ...DAYS]} /></Td>
+                              <Td><input aria-label="التاريخ" type="date" value={r.date} onChange={(e)=>setCell(wk.id, idx, "date", e.target.value)} className="w-full border rounded-lg px-2 py-1" style="border-color: var(--border)" /></Td>
+                              <Td><input aria-label="الصف" value={r.grade} onChange={(e)=>setCell(wk.id, idx, "grade", e.target.value)} className="w-full border rounded-lg px-2 py-1" style="border-color: var(--border)" /></Td>
+                              <Td><input aria-label="الحصة" value={r.period} onChange={(e)=>setCell(wk.id, idx, "period", e.target.value)} className="w-full border rounded-lg px-2 py-1" style="border-color: var(--border)" /></Td>
+                              <Td><input aria-label="المعلمة الغائبة" value={r.absentTeacher} onChange={(e)=>setCell(wk.id, idx, "absentTeacher", e.target.value)} className="w-full border rounded-lg px-2 py-1" style="border-color: var(--border)" /></Td>
+                              <Td><textarea aria-label="ما تم تنفيذه" value={r.executed} onChange={(e)=>setCell(wk.id, idx, "executed", e.target.value)} className="w-full border rounded-lg px-2 py-1 min-h-[44px]" style="border-color: var(--border)"></textarea></Td>
+                              <Td><textarea aria-label="الشاهد" value={r.witness} onChange={(e)=>setCell(wk.id, idx, "witness", e.target.value)} className="w-full border rounded-lg px-2 py-1 min-h-[44px]" style="border-color: var(--border)"></textarea></Td>
+                              <Td>
+                                <div className="space-y-1">
+                                  <Check label="المهارات الأساسية" checked={r.domain.basics} onChange={(v)=>setCell(wk.id, idx, "domain.basics", v)} />
+                                  <Check label="القيم والمواطنة الصالحة" checked={r.domain.values} onChange={(v)=>setCell(wk.id, idx, "domain.values", v)} />
+                                  <Check label="مهارات المستقبل" checked={r.domain.future} onChange={(v)=>setCell(wk.id, idx, "domain.future", v)} />
+                                </div>
+                              </Td>
+                              <Td className="print:hide">
+                                <button onClick={() => removeRow(wk.id, idx)} className="px-2 py-1 rounded-lg text-xs text-white" style="background: var(--accent)">حذف</button>
+                              </Td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </section>
+                ))}
+              </div>
+
+              <div className="print:hide flex flex-wrap items-center gap-2">
+                <button onClick={()=>weeks.length && addRow(weeks[0].id)} className="px-3 py-2 rounded-xl text-sm font-semibold text-white" style={{ background: "var(--accent)" }}>+ صف للأسبوع الأول</button>
+                <button onClick={()=>weeks[0] && removeWeek(weeks[0].id)} className="px-3 py-2 rounded-xl text-sm font-semibold" style={{ background: "var(--accent-dark)", color: "white" }}>حذف أول أسبوع</button>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<ReportApp />);
+    </script>
+  </body>
+</html>
