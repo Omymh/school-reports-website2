@@ -8,13 +8,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
         
         :root {
-            --primary: #86efac;
-            --secondary: #bbf7d0;
-            --dark: #166534;
-            --light: #dcfce7;
-            --accent: #22c55e;
-            --text: #1b4332;
-            --gray: #40916c;
+            --primary: #60a5fa;
+            --secondary: #93c5fd;
+            --dark: #1e40af;
+            --light: #dbeafe;
+            --accent: #3b82f6;
+            --text: #1e3a8a;
+            --gray: #4b5563;
             --container: 94vw;
         }
         
@@ -27,7 +27,7 @@
         
         html, body {
             font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #f0fdf4 100%);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
             color: var(--text);
             line-height: 1.6;
             min-height: 100vh;
@@ -35,11 +35,11 @@
         }
         
         .header-logo {
-            background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(22, 101, 52, 0.1);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.1);
             border-bottom: 2px solid var(--light);
             padding: 5px 0;
         }
@@ -61,11 +61,11 @@
         }
         
         nav {
-            background: linear-gradient(135deg, #86efac 0%, #4ade80 100%);
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
             position: sticky;
             top: 60px;
             z-index: 999;
-            box-shadow: 0 4px 12px rgba(22, 101, 52, 0.2);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
         }
         
         .nav {
@@ -87,7 +87,7 @@
             color: var(--dark);
             cursor: pointer;
             background: white;
-            box-shadow: 0 2px 8px rgba(22, 101, 52, 0.15);
+            box-shadow: 0 2px 8px rgba(30, 64, 175, 0.15);
             transition: all 0.3s;
             font-size: 14px;
             flex: 1;
@@ -97,15 +97,15 @@
         
         .nav-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(22, 101, 52, 0.25);
-            background: #dcfce7;
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.25);
+            background: #dbeafe;
         }
         
         .nav-btn.active {
-            background: linear-gradient(135deg, var(--dark), #166534);
+            background: linear-gradient(135deg, var(--dark), #1e40af);
             color: white;
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(22, 101, 52, 0.4);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
         }
         
         .container {
@@ -117,10 +117,10 @@
         
         .page {
             display: none;
-            background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
             padding: 20px;
             border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(22, 101, 52, 0.1);
+            box-shadow: 0 8px 24px rgba(30, 64, 175, 0.1);
             margin-bottom: 20px;
         }
         
@@ -195,7 +195,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
             padding: 8px 12px;
             border-radius: 10px;
             border: 2px solid var(--light);
@@ -206,7 +206,7 @@
         
         .chip:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(22, 101, 52, 0.2);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
         }
         
         .chip input[type="checkbox"] {
@@ -232,7 +232,7 @@
             outline: none;
             border-color: var(--accent);
             background: white;
-            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
         }
         
         textarea {
@@ -247,8 +247,8 @@
             color: white;
             font-weight: 800;
             cursor: pointer;
-            background: linear-gradient(135deg, var(--accent), #16a34a);
-            box-shadow: 0 4px 15px rgba(22, 101, 52, 0.3);
+            background: linear-gradient(135deg, var(--accent), #2563eb);
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
             transition: all 0.2s;
             font-size: 14px;
             display: inline-block;
@@ -262,7 +262,7 @@
         
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(22, 101, 52, 0.4);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
         }
         
         .btn.danger {
@@ -278,7 +278,7 @@
         .upload {
             border: 3px dashed var(--accent);
             border-radius: 12px;
-            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
             padding: 16px;
             text-align: center;
             cursor: pointer;
@@ -286,7 +286,7 @@
         }
         
         .upload:hover {
-            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
         }
         
         .upload p {
@@ -309,8 +309,8 @@
             object-fit: contain;
             border-radius: 10px;
             border: 2px solid var(--light);
-            box-shadow: 0 4px 12px rgba(22, 101, 52, 0.1);
-            background: #f0fdf4;
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.1);
+            background: #f0f9ff;
         }
         
         .hint {
@@ -324,7 +324,7 @@
         .table-wrap {
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(22, 101, 52, 0.08);
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.08);
             overflow-x: auto;
             margin: 12px 0;
         }
@@ -345,14 +345,14 @@
         }
         
         th {
-            background: linear-gradient(135deg, var(--accent), #4ade80);
+            background: linear-gradient(135deg, var(--accent), #60a5fa);
             color: white;
             font-weight: 800;
             font-size: 12px;
         }
         
         tbody tr:hover {
-            background: #f0fdf4;
+            background: #f0f9ff;
         }
         
         tbody tr:nth-child(even) {
@@ -368,7 +368,7 @@
             color: white;
             padding: 10px;
             text-align: center;
-            box-shadow: 0 -4px 20px rgba(22, 101, 52, 0.15);
+            box-shadow: 0 -4px 20px rgba(30, 64, 175, 0.15);
             z-index: 5;
         }
         
@@ -378,7 +378,7 @@
         }
         
         .site-footer strong {
-            color: #bbf7d0;
+            color: #dbeafe;
         }
         
         .toast {
@@ -386,11 +386,11 @@
             top: 100px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--accent), #4ade80);
+            background: linear-gradient(135deg, var(--accent), #60a5fa);
             color: white;
             padding: 10px 16px;
             border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(22, 101, 52, 0.2);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.2);
             z-index: 9999;
             font-size: 14px;
             font-weight: 700;
@@ -416,171 +416,6 @@
         
         .toast.warn {
             background: linear-gradient(135deg, #fbbf24, #f59e0b);
-        }
-        
-        .date-with-hijri {
-            position: relative;
-        }
-        
-        .date-input-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-        
-        .date-input-container .input {
-            padding-right: 50px;
-            cursor: pointer;
-        }
-        
-        .hijri-toggle {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: transparent;
-            border: none;
-            color: var(--dark);
-            cursor: pointer;
-            font-size: 18px;
-            padding: 5px;
-            border-radius: 6px;
-            transition: all 0.2s;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .hijri-toggle:hover {
-            background: rgba(34, 197, 94, 0.1);
-        }
-        
-        .hijri-icon {
-            width: 20px;
-            height: 20px;
-            fill: var(--dark);
-            transition: all 0.3s;
-        }
-        
-        .hijri-toggle:hover .hijri-icon {
-            fill: var(--accent);
-            transform: scale(1.1);
-        }
-        
-        .hijri-calendar {
-            position: fixed;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(22, 101, 52, 0.15);
-            padding: 15px;
-            z-index: 100;
-            width: 90vw;
-            max-width: 320px;
-            display: none;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 2px solid var(--light);
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-        
-        .hijri-calendar.active {
-            display: block;
-            animation: slideIn 0.3s ease;
-        }
-        
-        .hijri-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--light);
-        }
-        
-        .hijri-month-year {
-            font-weight: 700;
-            color: var(--dark);
-            font-size: 16px;
-        }
-        
-        .hijri-nav {
-            display: flex;
-            gap: 5px;
-        }
-        
-        .hijri-nav button {
-            background: var(--light);
-            border: none;
-            border-radius: 6px;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-weight: bold;
-            color: var(--dark);
-            transition: all 0.2s;
-            font-size: 14px;
-        }
-        
-        .hijri-nav button:hover {
-            background: var(--accent);
-            color: white;
-        }
-        
-        .hijri-weekdays {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            text-align: center;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: var(--dark);
-            font-size: 13px;
-        }
-        
-        .hijri-days {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
-        }
-        
-        .hijri-day {
-            padding: 8px 5px;
-            text-align: center;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 13px;
-            color: var(--text);
-        }
-        
-        .hijri-day:hover {
-            background: var(--light);
-        }
-        
-        .hijri-day.selected {
-            background: var(--accent);
-            color: white;
-        }
-        
-        .today-btn {
-            margin-top: 10px;
-            padding: 8px 12px;
-            background: var(--light);
-            color: var(--dark);
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            width: 100%;
-            transition: all 0.2s;
-            font-size: 14px;
-        }
-        
-        .today-btn:hover {
-            background: var(--accent);
-            color: white;
         }
         
         @media (min-width: 768px) {
@@ -635,21 +470,11 @@
             }
             
             .witness-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
             
             .witness-grid img {
                 height: 160px;
-            }
-            
-            .hijri-calendar {
-                position: absolute;
-                top: 100%;
-                right: 0;
-                left: auto;
-                transform: none;
-                width: 300px;
-                max-width: none;
             }
         }
         
@@ -678,7 +503,10 @@
 <body>
     <header class="header-logo">
         <div class="wrap">
-            <img src="26.png" alt="ديباجة الابتدائية السابعة بمحافظة الوجه">
+            <!-- سيتم استخدام صورة افتراضية -->
+            <div style="height: 60px; display: flex; align-items: center; justify-content: center; color: #1e40af; font-weight: bold; font-size: 20px;">
+                الابتدائية السابعة - الوجه
+            </div>
         </div>
     </header>
     
@@ -686,6 +514,7 @@
         <div class="nav">
             <button class="nav-btn active" id="navHome">الصفحة الرئيسية</button>
             <button class="nav-btn" id="navActivities">تقارير الأنشطة</button>
+            <button class="nav-btn" id="navInitiatives">تقارير المبادرات</button>
             <button class="nav-btn" id="navSessions">تقارير الحصص</button>
         </div>
     </nav>
@@ -693,7 +522,7 @@
     <main class="container">
         <section id="home" class="page active">
             <h1>نظام التقارير المدرسية</h1>
-            <p>مرحباً بالمعلمات الكريمات في منصة الابتدائية السابعة بمحافظة الوجه لتوثيق الأنشطة والحصص بكفاءة وسهولة.</p>
+            <p>مرحباً بالمعلمات الكريمات في منصة الابتدائية السابعة بمحافظة الوجه لتوثيق الأنشطة والمبادرات والحصص بكفاءة وسهولة.</p>
         </section>
         
         <section id="activities" class="page">
@@ -703,39 +532,14 @@
                     <label>اسم البرنامج / النشاط *<input class="input" name="title" required></label>
                     <label>المنفذ *<input class="input" name="owner" required></label>
                     <label>عدد المستفيدين<input class="input" name="count" type="number" min="1"></label>
-                    <label class="date-with-hijri">التاريخ *
-                        <div class="date-input-container">
-                            <input class="input hijri-date-input" name="date" required placeholder="اختر التاريخ الهجري" readonly>
-                            <button type="button" class="hijri-toggle">
-                                <svg class="hijri-icon" viewBox="0 0 24 24">
-                                    <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V9h14v10zM5 7V5h14v2H5zm2 4h10v2H7v-2zm0 4h7v2H7v-2z"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="hijri-calendar">
-                            <div class="hijri-header">
-                                <div class="hijri-month-year"></div>
-                                <div class="hijri-nav">
-                                    <button type="button" class="prev-year">«</button>
-                                    <button type="button" class="prev-month">‹</button>
-                                    <button type="button" class="next-month">›</button>
-                                    <button type="button" class="next-year">»</button>
-                                </div>
-                            </div>
-                            <div class="hijri-weekdays">
-                                <span>ح</span><span>ن</span><span>ث</span><span>ر</span><span>خ</span><span>ج</span><span>س</span>
-                            </div>
-                            <div class="hijri-days"></div>
-                            <button type="button" class="today-btn">اختر اليوم</button>
-                        </div>
-                    </label>
+                    <label>التاريخ *<input class="input" name="date" required type="date"></label>
                     <label>المكان<input class="input" name="place"></label>
                 </div>
                 <label>الأهداف<textarea class="input" name="goals"></textarea></label>
                 <label>وصف النشاط<textarea class="input" name="desc"></textarea></label>
                 <div>
                     <div class="upload" id="uploadBox">
-                        <p>اضغطي هنا لرفع صور الشواهد (حد أقصى 4)</p>
+                        <p>اضغطي هنا لرفع صور الشواهد (حد أقصى 6)</p>
                         <input type="file" id="witnessFiles" accept="image/*" multiple hidden>
                         <button class="btn" type="button" id="addWitness">إضافة الشواهد</button>
                     </div>
@@ -744,7 +548,35 @@
                         <button class="btn" type="button" id="exportActivity">تصدير PDF</button>
                         <button class="btn danger" type="button" id="clearWitness">حذف الصور</button>
                     </div>
-                    <div class="hint" id="wCount">(0/4)</div>
+                    <div class="hint" id="wCount">(0/6)</div>
+                </div>
+            </form>
+        </section>
+        
+        <section id="initiatives" class="page">
+            <h1>تقرير المبادرة المدرسية</h1>
+            <form id="iniForm" class="form">
+                <div class="grid-2">
+                    <label>اسم المبادرة *<input class="input" name="title" required></label>
+                    <label>المنفذ *<input class="input" name="owner" required></label>
+                    <label>عدد المستفيدين<input class="input" name="count" type="number" min="1"></label>
+                    <label>التاريخ *<input class="input" name="date" required type="date"></label>
+                    <label>المكان<input class="input" name="place"></label>
+                </div>
+                <label>الأهداف<textarea class="input" name="goals"></textarea></label>
+                <label>وصف المبادرة<textarea class="input" name="desc"></textarea></label>
+                <div>
+                    <div class="upload" id="uploadBoxInitiative">
+                        <p>اضغطي هنا لرفع صور الشواهد (حد أقصى 6)</p>
+                        <input type="file" id="witnessFilesInitiative" accept="image/*" multiple hidden>
+                        <button class="btn" type="button" id="addWitnessInitiative">إضافة الشواهد</button>
+                    </div>
+                    <div id="witnessPreviewInitiative" class="witness-grid"></div>
+                    <div class="actions" style="margin-top:16px">
+                        <button class="btn" type="button" id="exportInitiative">تصدير PDF</button>
+                        <button class="btn danger" type="button" id="clearWitnessInitiative">حذف الصور</button>
+                    </div>
+                    <div class="hint" id="wCountInitiative">(0/6)</div>
                 </div>
             </form>
         </section>
@@ -778,32 +610,7 @@
                         <option>الأربعاء</option>
                         <option>الخميس</option>
                     </select></label>
-                    <label class="date-with-hijri">التاريخ *
-                        <div class="date-input-container">
-                            <input class="input hijri-date-input" id="sessionDate" required placeholder="اختر التاريخ الهجري" readonly>
-                            <button type="button" class="hijri-toggle">
-                                <svg class="hijri-icon" viewBox="0 0 24 24">
-                                    <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V9h14v10zM5 7V5h14v2H5zm2 4h10v2H7v-2zm0 4h7v2H7v-2z"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="hijri-calendar">
-                            <div class="hijri-header">
-                                <div class="hijri-month-year"></div>
-                                <div class="hijri-nav">
-                                    <button type="button" class="prev-year">«</button>
-                                    <button type="button" class="prev-month">‹</button>
-                                    <button type="button" class="next-month">›</button>
-                                    <button type="button" class="next-year">»</button>
-                                </div>
-                            </div>
-                            <div class="hijri-weekdays">
-                                <span>ح</span><span>ن</span><span>ث</span><span>ر</span><span>خ</span><span>ج</span><span>س</span>
-                            </div>
-                            <div class="hijri-days"></div>
-                            <button type="button" class="today-btn">اختر اليوم</button>
-                        </div>
-                    </label>
+                    <label>التاريخ *<input class="input" id="sessionDate" required type="date"></label>
                     <label>الصف *<input class="input" id="className" required></label>
                     <label>رقم الحصة *<input class="input" id="sessionNumber" required></label>
                     <label>المعلمة الغائبة *<input class="input" id="absentTeacher" required></label>
@@ -853,33 +660,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     
     <script>
+        // المتغيرات العامة
         let witness = [];
-        let sessions = [];
-        let currentHijriYear = 1447;
-        let currentHijriMonth = 1;
+        let witnessInitiative = [];
+        let sessions = JSON.parse(localStorage.getItem('sessionsData')) || [];
         
+        // تهيئة الصفحة عند التحميل
         document.addEventListener('DOMContentLoaded', function() {
-            loadSessions();
             initializeNavigation();
             initializeWitnessManagement();
+            initializeInitiativeWitnessManagement();
             initializeActivityExport();
+            initializeInitiativeExport();
             initializeSessionManagement();
             initializeSessionsExport();
-            initializeHijriCalendar();
+            renderSessions();
         });
         
-        function loadSessions() {
-            try {
-                const savedSessions = localStorage.getItem('sessionsData');
-                if (savedSessions) {
-                    sessions = JSON.parse(savedSessions);
-                    renderSessions();
-                }
-            } catch(e) {
-                console.log('لا توجد بيانات محفوظة');
-            }
-        }
-        
+        // وظيفة لعرض الإشعارات
         function showToast(message, type = '') {
             const toast = document.createElement('div');
             toast.className = `toast ${type}`;
@@ -898,6 +696,7 @@
             }, 1900);
         }
         
+        // التنقل بين الصفحات
         function initializeNavigation() {
             document.getElementById('navHome').addEventListener('click', function() {
                 showPage('home');
@@ -906,6 +705,11 @@
             
             document.getElementById('navActivities').addEventListener('click', function() {
                 showPage('activities');
+                setActiveNav(this);
+            });
+            
+            document.getElementById('navInitiatives').addEventListener('click', function() {
+                showPage('initiatives');
                 setActiveNav(this);
             });
             
@@ -934,6 +738,7 @@
             activeButton.classList.add('active');
         }
         
+        // إدارة صور الشواهد للأنشطة
         function initializeWitnessManagement() {
             const witnessFiles = document.getElementById('witnessFiles');
             const witnessPreview = document.getElementById('witnessPreview');
@@ -952,14 +757,14 @@
             witnessFiles.addEventListener('change', function(e) {
                 const files = Array.from(e.target.files || [])
                     .filter(file => file.type.startsWith('image/'))
-                    .slice(0, 4 - witness.length);
+                    .slice(0, 6 - witness.length);
                 
                 if (files.length === 0) return;
                 
                 let processed = 0;
                 
                 files.forEach(file => {
-                    if (witness.length >= 4) return;
+                    if (witness.length >= 6) return;
                     
                     const reader = new FileReader();
                     reader.onload = function(e) {
@@ -975,7 +780,7 @@
                         
                         processed++;
                         if (processed === files.length) {
-                            witnessCount.textContent = `(${witness.length}/4)`;
+                            witnessCount.textContent = `(${witness.length}/6)`;
                             showToast('تم تحميل الشواهد');
                         }
                     };
@@ -995,11 +800,79 @@
                 witness = [];
                 witnessFiles.value = '';
                 witnessPreview.innerHTML = '';
-                witnessCount.textContent = '(0/4)';
+                witnessCount.textContent = '(0/6)';
                 showToast('تم الحذف');
             });
         }
         
+        // إدارة صور الشواهد للمبادرات
+        function initializeInitiativeWitnessManagement() {
+            const witnessFiles = document.getElementById('witnessFilesInitiative');
+            const witnessPreview = document.getElementById('witnessPreviewInitiative');
+            const witnessCount = document.getElementById('wCountInitiative');
+            
+            document.getElementById('uploadBoxInitiative').addEventListener('click', function() {
+                witnessFiles.click();
+            });
+            
+            document.getElementById('addWitnessInitiative').addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                witnessFiles.click();
+            });
+            
+            witnessFiles.addEventListener('change', function(e) {
+                const files = Array.from(e.target.files || [])
+                    .filter(file => file.type.startsWith('image/'))
+                    .slice(0, 6 - witnessInitiative.length);
+                
+                if (files.length === 0) return;
+                
+                let processed = 0;
+                
+                files.forEach(file => {
+                    if (witnessInitiative.length >= 6) return;
+                    
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        witnessInitiative.push({
+                            name: file.name,
+                            url: e.target.result
+                        });
+                        
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.alt = 'شاهد المبادرة';
+                        witnessPreview.appendChild(img);
+                        
+                        processed++;
+                        if (processed === files.length) {
+                            witnessCount.textContent = `(${witnessInitiative.length}/6)`;
+                            showToast('تم تحميل الشواهد');
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                });
+            });
+            
+            document.getElementById('clearWitnessInitiative').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (witnessInitiative.length === 0) {
+                    showToast('لا توجد صور', 'warn');
+                    return;
+                }
+                
+                if (!confirm('حذف جميع صور الشواهد؟')) return;
+                
+                witnessInitiative = [];
+                witnessFiles.value = '';
+                witnessPreview.innerHTML = '';
+                witnessCount.textContent = '(0/6)';
+                showToast('تم الحذف');
+            });
+        }
+        
+        // تصدير تقارير الأنشطة - مع التعديل المطلوب
         function initializeActivityExport() {
             document.getElementById('exportActivity').addEventListener('click', async function(e) {
                 e.preventDefault();
@@ -1017,57 +890,56 @@
                     showToast('جاري التصدير...', 'warn');
                     
                     const printElement = document.createElement('div');
-                    printElement.style.cssText = `position: fixed; top: 0; left: 0; width: 800px; background: white; padding: 20px; z-index: 10000; box-shadow: 0 0 20px rgba(0,0,0,0.3); font-family: 'Tajawal', sans-serif; direction: rtl;`;
+                    printElement.style.cssText = `position: fixed; top: 0; left: 0; width: 800px; background: white; padding: 30px; z-index: 10000; box-shadow: 0 0 20px rgba(0,0,0,0.3); font-family: 'Tajawal', sans-serif; direction: rtl; min-height: 1123px; display: flex; flex-direction: column;`;
                     
                     printElement.innerHTML = `
-                        <div style="text-align: center; margin-bottom: 20px;">
-                            <img src="26.png" style="width: 100%; height: 80px; object-fit: contain; margin-bottom: 15px;">
-                            <h1 style="color: #166534; font-size: 24px; margin: 0; font-weight: 900; border-bottom: 2px solid #86efac; padding-bottom: 10px;">تقرير النشاط المدرسي</h1>
+                        <div style="flex: 1;">
+                            <div style="text-align: center; margin-bottom: 20px;">
+                                <h1 style="color: #1e40af; font-size: 24px; margin: 0; font-weight: 900; border-bottom: 2px solid #60a5fa; padding-bottom: 10px;">تقرير النشاط المدرسي</h1>
+                                <p style="color: #1e40af; font-size: 18px; margin: 10px 0;">الابتدائية السابعة بمحافظة الوجه</p>
+                            </div>
+            
+                            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold; width: 30%;">اسم البرنامج</td>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe;">${data.title}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">المنفذ</td>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe;">${data.owner}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">عدد المستفيدين</td>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe;">${data.count || 'غير محدد'}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">التاريخ</td>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe;">${data.date}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">المكان</td>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe;">${data.place || 'غير محدد'}</td>
+                                </tr>
+                            </table>
+            
+                            ${data.goals ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 8px; border-right: 3px solid #3b82f6; padding-right: 8px;">الأهداف</h4><div style="padding: 12px; background: #f0f9ff; border-radius: 6px; border: 1px solid #dbeafe;">${data.goals}</div></div>` : ''}
+            
+                            ${data.desc ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 8px; border-right: 3px solid #3b82f6; padding-right: 8px;">وصف النشاط</h4><div style="padding: 12px; background: #f0f9ff; border-radius: 6px; border: 1px solid #dbeafe;">${data.desc}</div></div>` : ''}
+            
+                            ${witness.length > 0 ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 12px; border-right: 3px solid #3b82f6; padding-right: 8px;">صور الشواهد</h4><div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">${witness.map(w => `<div style="text-align: center; border: 1px solid #dbeafe; border-radius: 6px; padding: 8px; background: #f0f9ff;"><img src="${w.url}" style="max-width: 100%; max-height: 150px; object-fit: contain;"><p style="margin-top: 8px; font-size: 12px; color: #1e40af;">شاهد النشاط</p></div>`).join('')}</div></div>` : ''}
                         </div>
-        
-                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid #dcfce7; background: #f0fdf4; font-weight: bold; width: 30%;">اسم البرنامج</td>
-                                <td style="padding: 10px; border: 1px solid #dcfce7;">${data.title}</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid #dcfce7; background: #f0fdf4; font-weight: bold;">المنفذ</td>
-                                <td style="padding: 10px; border: 1px solid #dcfce7;">${data.owner}</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid #dcfce7; background: #f0fdf4; font-weight: bold;">عدد المستفيدين</td>
-                                <td style="padding: 10px; border: 1px solid #dcfce7;">${data.count || 'غير محدد'}</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid #dcfce7; background: #f0fdf4; font-weight: bold;">التاريخ</td>
-                                <td style="padding: 10px; border: 1px solid #dcfce7;">${data.date}</td>
-                            </tr>
-                            <tr>
-                                <td style="padding: 10px; border: 1px solid #dcfce7; background: #f0fdf4; font-weight: bold;">المكان</td>
-                                <td style="padding: 10px; border: 1px solid #dcfce7;">${data.place || 'غير محدد'}</td>
-                            </tr>
-                        </table>
-        
-                        ${data.goals ? `<div style="margin-bottom: 20px;"><h4 style="color: #166534; margin-bottom: 8px; border-right: 3px solid #22c55e; padding-right: 8px;">الأهداف</h4><div style="padding: 12px; background: #f0fdf4; border-radius: 6px; border: 1px solid #dcfce7;">${data.goals}</div></div>` : ''}
-        
-                        ${data.desc ? `<div style="margin-bottom: 20px;"><h4 style="color: #166534; margin-bottom: 8px; border-right: 3px solid #22c55e; padding-right: 8px;">وصف النشاط</h4><div style="padding: 12px; background: #f0fdf4; border-radius: 6px; border: 1px solid #dcfce7;">${data.desc}</div></div>` : ''}
-        
-                        ${witness.length > 0 ? `<div style="margin-bottom: 20px;"><h4 style="color: #166534; margin-bottom: 12px; border-right: 3px solid #22c55e; padding-right: 8px;">صور الشواهد</h4><div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">${witness.map(w => `<div style="text-align: center; border: 1px solid #dcfce7; border-radius: 6px; padding: 8px; background: #f0fdf4;"><img src="${w.url}" style="max-width: 100%; max-height: 150px; object-fit: contain;"><p style="margin-top: 8px; font-size: 12px; color: #166534;">شاهد النشاط</p></div>`).join('')}</div></div>` : ''}
 
-                        <div style="margin-top: 40px;">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: center;">
-                                <div>
-                                    <p style="margin-bottom: 40px; font-weight: bold; color: #166534;">التوقيع</p>
-                                    <div style="border-top: 2px solid #166534; padding-top: 8px;">
-                                        <p style="margin: 0; font-size: 12px; color: #166534;">المعلمة المنفذة</p>
-                                    </div>
+                        <!-- التعديل: اسم المديرة على اليسار والختم في الوسط -->
+                        <div style="margin-top: auto; padding-top: 40px; border-top: 2px solid #dbeafe;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; text-align: center;">
+                                <div style="flex: 1; text-align: left;">
+                                    <p style="margin-bottom: 10px; font-weight: bold; color: #1e40af; font-size: 14px;">مديرة المدرسة</p>
+                                    <p style="margin: 0; font-size: 13px; color: #1e40af;">هديل عبدالله الطيار</p>
                                 </div>
-                                <div>
-                                    <p style="margin-bottom: 40px; font-weight: bold; color: #166534;">مديرة المدرسة</p>
-                                    <div style="border-top: 2px solid #166534; padding-top: 8px;">
-                                        <p style="margin: 0; font-size: 12px; color: #166534;">هديل الطيار</p>
-                                    </div>
+                                <div style="flex: 1;">
+                                    <p style="margin-bottom: 10px; font-weight: bold; color: #1e40af; font-size: 14px;">الختم</p>
                                 </div>
+                                <div style="flex: 1;"></div>
                             </div>
                         </div>
                     `;
@@ -1078,8 +950,7 @@
                         scale: 2,
                         backgroundColor: "#ffffff",
                         useCORS: true,
-                        logging: false,
-                        allowTaint: true
+                        logging: false
                     });
         
                     document.body.removeChild(printElement);
@@ -1106,6 +977,171 @@
             });
         }
         
+        // تصدير تقارير المبادرات - مع التعديل المطلوب
+        function initializeInitiativeExport() {
+            document.getElementById('exportInitiative').addEventListener('click', async function(e) {
+                e.preventDefault();
+                
+                const form = document.getElementById('iniForm');
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
+                
+                if (!data.title || !data.owner || !data.date) {
+                    showToast('أكمل الحقول الأساسية (*)', 'warn');
+                    return;
+                }
+                
+                try {
+                    showToast('جاري التصدير...', 'warn');
+                    
+                    const printElement = document.createElement('div');
+                    printElement.style.cssText = `position: fixed; top: 0; left: 0; width: 800px; background: white; padding: 30px; z-index: 10000; box-shadow: 0 0 20px rgba(0,0,0,0.3); font-family: 'Tajawal', sans-serif; direction: rtl; min-height: 1123px; display: flex; flex-direction: column;`;
+                    
+                    printElement.innerHTML = `
+                        <div style="flex: 1;">
+                            <div style="text-align: center; margin-bottom: 20px;">
+                                <h1 style="color: #1e40af; font-size: 24px; margin: 0; font-weight: 900; border-bottom: 2px solid #60a5fa; padding-bottom: 10px;">تقرير المبادرة المدرسية</h1>
+                                <p style="color: #1e40af; font-size: 18px; margin: 10px 0;">الابتدائية السابعة بمحافظة الوجه</p>
+                            </div>
+            
+                            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold; width: 30%;">اسم المبادرة</td>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe;">${data.title}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">المنفذ</td>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe;">${data.owner}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">عدد المستفيدين</td>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe;">${data.count || 'غير محدد'}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">التاريخ</td>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe;">${data.date}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">المكان</td>
+                                    <td style="padding: 10px; border: 1px solid #dbeafe;">${data.place || 'غير محدد'}</td>
+                                </tr>
+                            </table>
+            
+                            ${data.goals ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 8px; border-right: 3px solid #3b82f6; padding-right: 8px;">الأهداف</h4><div style="padding: 12px; background: #f0f9ff; border-radius: 6px; border: 1px solid #dbeafe;">${data.goals}</div></div>` : ''}
+            
+                            ${data.desc ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 8px; border-right: 3px solid #3b82f6; padding-right: 8px;">وصف المبادرة</h4><div style="padding: 12px; background: #f0f9ff; border-radius: 6px; border: 1px solid #dbeafe;">${data.desc}</div></div>` : ''}
+            
+                            ${witnessInitiative.length > 0 ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 12px; border-right: 3px solid #3b82f6; padding-right: 8px;">صور الشواهد</h4><div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">${witnessInitiative.map(w => `<div style="text-align: center; border: 1px solid #dbeafe; border-radius: 6px; padding: 8px; background: #f0f9ff;"><img src="${w.url}" style="max-width: 100%; max-height: 150px; object-fit: contain;"><p style="margin-top: 8px; font-size: 12px; color: #1e40af;">شاهد المبادرة</p></div>`).join('')}</div></div>` : ''}
+                        </div>
+
+                        <!-- التعديل: اسم المديرة على اليسار والختم في الوسط -->
+                        <div style="margin-top: auto; padding-top: 40px; border-top: 2px solid #dbeafe;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; text-align: center;">
+                                <div style="flex: 1; text-align: left;">
+                                    <p style="margin-bottom: 10px; font-weight: bold; color: #1e40af; font-size: 14px;">مديرة المدرسة</p>
+                                    <p style="margin: 0; font-size: 13px; color: #1e40af;">هديل عبدالله الطيار</p>
+                                </div>
+                                <div style="flex: 1;">
+                                    <p style="margin-bottom: 10px; font-weight: bold; color: #1e40af; font-size: 14px;">الختم</p>
+                                </div>
+                                <div style="flex: 1;"></div>
+                            </div>
+                        </div>
+                    `;
+        
+                    document.body.appendChild(printElement);
+        
+                    const canvas = await html2canvas(printElement, {
+                        scale: 2,
+                        backgroundColor: "#ffffff",
+                        useCORS: true,
+                        logging: false
+                    });
+        
+                    document.body.removeChild(printElement);
+        
+                    const imgData = canvas.toDataURL('image/jpeg', 0.95);
+                    const { jsPDF } = window.jspdf;
+                    const pdf = new jsPDF({
+                        orientation: 'portrait',
+                        unit: 'mm',
+                        format: 'a4'
+                    });
+        
+                    const pageWidth = pdf.internal.pageSize.getWidth();
+                    const imgHeight = (canvas.height * pageWidth) / canvas.width;
+        
+                    pdf.addImage(imgData, 'JPEG', 0, 0, pageWidth, imgHeight);
+                    pdf.save('تقرير مبادرة - ' + (data.title || 'الابتدائية السابعة بمحافظة الوجه') + '.pdf');
+                    showToast('تم التصدير بنجاح');
+        
+                } catch (error) {
+                    console.error('خطأ:', error);
+                    showToast('حدث خطأ أثناء التصدير', 'err');
+                }
+            });
+        }
+        
+        // إدارة الحصص
+        function initializeSessionManagement() {
+            document.getElementById('saveSession').addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const week = document.getElementById('weekNumber').value;
+                const day = document.getElementById('dayName').value;
+                const date = document.getElementById('sessionDate').value;
+                const className = document.getElementById('className').value.trim();
+                const sessionNumber = document.getElementById('sessionNumber').value.trim();
+                const absentTeacher = document.getElementById('absentTeacher').value.trim();
+                const activitiesText = document.getElementById('activitiesText').value.trim();
+                
+                const fields = [];
+                if (document.getElementById('basicSkills').checked) fields.push('المهارات الأساسية');
+                if (document.getElementById('values').checked) fields.push('القيم والمواطنة الصالحة');
+                if (document.getElementById('futureSkills').checked) fields.push('مهارات المستقبل');
+                
+                if (!week || !day || !date || !className || !sessionNumber || !absentTeacher || !activitiesText || fields.length === 0) {
+                    showToast('أكمل كل الحقول واختر مجالاً واحداً على الأقل', 'warn');
+                    return;
+                }
+                
+                sessions.push({
+                    week: week,
+                    day: day,
+                    date: date,
+                    className: className,
+                    number: sessionNumber,
+                    teacher: absentTeacher,
+                    activities: activitiesText,
+                    fields: fields.join('، ')
+                });
+
+                localStorage.setItem('sessionsData', JSON.stringify(sessions));
+
+                renderSessions();
+
+                document.getElementById('sesForm').reset();
+
+                showToast('تم حفظ الحصة');
+            });
+
+            document.getElementById('clearAll').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (sessions.length === 0) {
+                    showToast('لا توجد حصص مسجلة', 'warn');
+                    return;
+                }
+
+                if (!confirm('مسح جميع الحصص المسجلة؟')) return;
+
+                sessions = [];
+                localStorage.setItem('sessionsData', JSON.stringify(sessions));
+                renderSessions();
+                showToast('تم مسح جميع الحصص');
+            });
+        }
+        
+        // عرض الحصص المسجلة
         function renderSessions() {
             const body = document.getElementById('sessionsBody');
             if (!body) return;
@@ -1144,81 +1180,12 @@
             if (!confirm('حذف هذه الحصة؟')) return;
             
             sessions.splice(index, 1);
-            try {
-                localStorage.setItem('sessionsData', JSON.stringify(sessions));
-            } catch(e) {}
+            localStorage.setItem('sessionsData', JSON.stringify(sessions));
             renderSessions();
             showToast('تم الحذف');
         }
         
-        function initializeSessionManagement() {
-            document.getElementById('saveSession').addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const week = document.getElementById('weekNumber').value;
-                const day = document.getElementById('dayName').value;
-                const date = document.getElementById('sessionDate').value;
-                const className = document.getElementById('className').value.trim();
-                const sessionNumber = document.getElementById('sessionNumber').value.trim();
-                const absentTeacher = document.getElementById('absentTeacher').value.trim();
-                const activitiesText = document.getElementById('activitiesText').value.trim();
-                
-                const fields = [];
-                if (document.getElementById('basicSkills').checked) fields.push('المهارات الأساسية');
-                if (document.getElementById('values').checked) fields.push('القيم والمواطنة الصالحة');
-                if (document.getElementById('futureSkills').checked) fields.push('مهارات المستقبل');
-                
-                if (!week || !day || !date || !className || !sessionNumber || !absentTeacher || !activitiesText || fields.length === 0) {
-                    showToast('أكمل كل الحقول واختر مجالاً واحداً على الأقل', 'warn');
-                    return;
-                }
-                
-                sessions.push({
-                    week: week,
-                    day: day,
-                    date: date,
-                    className: className,
-                    number: sessionNumber,
-                    teacher: absentTeacher,
-                    activities: activitiesText,
-                    fields: fields.join('، ')
-                });
-
-                // حفظ الجلسات في localStorage
-                try {
-                    localStorage.setItem('sessionsData', JSON.stringify(sessions));
-                } catch(e) {
-                    console.error('خطأ في الحفظ:', e);
-                }
-
-                // إعادة عرض الجلسات
-                renderSessions();
-
-                // مسح النموذج
-                document.getElementById('sesForm').reset();
-
-                showToast('تم حفظ الحصة');
-            });
-
-            // زر مسح الكل
-            document.getElementById('clearAll').addEventListener('click', function(e) {
-                e.preventDefault();
-                if (sessions.length === 0) {
-                    showToast('لا توجد حصص مسجلة', 'warn');
-                    return;
-                }
-
-                if (!confirm('مسح جميع الحصص المسجلة؟')) return;
-
-                sessions = [];
-                try {
-                    localStorage.setItem('sessionsData', JSON.stringify(sessions));
-                } catch(e) {}
-                renderSessions();
-                showToast('تم مسح جميع الحصص');
-            });
-        }
-
+        // تصدير تقارير الحصص - مع التعديل المطلوب
         function initializeSessionsExport() {
             document.getElementById('exportSessions').addEventListener('click', async function(e) {
                 e.preventDefault();
@@ -1232,56 +1199,63 @@
                     showToast('جاري التصدير...', 'warn');
 
                     const printElement = document.createElement('div');
-                    printElement.style.cssText = `position: fixed; top: 0; left: 0; width: 800px; background: white; padding: 20px; z-index: 10000; box-shadow: 0 0 20px rgba(0,0,0,0.3); font-family: 'Tajawal', sans-serif; direction: rtl;`;
+                    printElement.style.cssText = `position: fixed; top: 0; left: 0; width: 800px; background: white; padding: 30px; z-index: 10000; box-shadow: 0 0 20px rgba(0,0,0,0.3); font-family: 'Tajawal', sans-serif; direction: rtl; min-height: 1123px; display: flex; flex-direction: column;`;
 
                     let tableRows = '';
                     sessions.forEach((session, index) => {
                         tableRows += `
                             <tr>
-                                <td style="padding: 8px; border: 1px solid #dcfce7;">${index + 1}</td>
-                                <td style="padding: 8px; border: 1px solid #dcfce7;">${session.week || ''}</td>
-                                <td style="padding: 8px; border: 1px solid #dcfce7;">${session.day}</td>
-                                <td style="padding: 8px; border: 1px solid #dcfce7;">${session.date}</td>
-                                <td style="padding: 8px; border: 1px solid #dcfce7;">${session.className}</td>
-                                <td style="padding: 8px; border: 1px solid #dcfce7;">${session.number}</td>
-                                <td style="padding: 8px; border: 1px solid #dcfce7;">${session.teacher}</td>
-                                <td style="padding: 8px; border: 1px solid #dcfce7; text-align: right;">${session.activities}</td>
-                                <td style="padding: 8px; border: 1px solid #dcfce7; text-align: right;">${session.fields}</td>
+                                <td style="padding: 8px; border: 1px solid #dbeafe;">${index + 1}</td>
+                                <td style="padding: 8px; border: 1px solid #dbeafe;">${session.week || ''}</td>
+                                <td style="padding: 8px; border: 1px solid #dbeafe;">${session.day}</td>
+                                <td style="padding: 8px; border: 1px solid #dbeafe;">${session.date}</td>
+                                <td style="padding: 8px; border: 1px solid #dbeafe;">${session.className}</td>
+                                <td style="padding: 8px; border: 1px solid #dbeafe;">${session.number}</td>
+                                <td style="padding: 8px; border: 1px solid #dbeafe;">${session.teacher}</td>
+                                <td style="padding: 8px; border: 1px solid #dbeafe; text-align: right;">${session.activities}</td>
+                                <td style="padding: 8px; border: 1px solid #dbeafe; text-align: right;">${session.fields}</td>
                             </tr>
                         `;
                     });
 
                     printElement.innerHTML = `
-                        <div style="text-align: center; margin-bottom: 20px;">
-                            <img src="26.png" style="width: 100%; height: 80px; object-fit: contain; margin-bottom: 15px;">
-                            <h1 style="color: #166534; font-size: 24px; margin: 0; font-weight: 900; border-bottom: 2px solid #86efac; padding-bottom: 10px;">تقارير حصص الانتظار</h1>
+                        <div style="flex: 1;">
+                            <div style="text-align: center; margin-bottom: 20px;">
+                                <h1 style="color: #1e40af; font-size: 24px; margin: 0; font-weight: 900; border-bottom: 2px solid #60a5fa; padding-bottom: 10px;">تقارير حصص الانتظار</h1>
+                                <p style="color: #1e40af; font-size: 18px; margin: 10px 0;">الابتدائية السابعة بمحافظة الوجه</p>
+                            </div>
+
+                            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                <thead>
+                                    <tr>
+                                        <th style="padding: 10px; border: 1px solid #dbeafe; background: #3b82f6; color: white; width: 40px;">م</th>
+                                        <th style="padding: 10px; border: 1px solid #dbeafe; background: #3b82f6; color: white; width: 80px;">الأسبوع</th>
+                                        <th style="padding: 10px; border: 1px solid #dbeafe; background: #3b82f6; color: white; width: 80px;">اليوم</th>
+                                        <th style="padding: 10px; border: 1px solid #dbeafe; background: #3b82f6; color: white; width: 100px;">التاريخ</th>
+                                        <th style="padding: 10px; border: 1px solid #dbeafe; background: #3b82f6; color: white;">الصف</th>
+                                        <th style="padding: 10px; border: 1px solid #dbeafe; background: #3b82f6; color: white; width: 60px;">الحصة</th>
+                                        <th style="padding: 10px; border: 1px solid #dbeafe; background: #3b82f6; color: white; width: 140px;">المعلمة الغائبة</th>
+                                        <th style="padding: 10px; border: 1px solid #dbeafe; background: #3b82f6; color: white; min-width: 200px;">ما تم تنفيذه</th>
+                                        <th style="padding: 10px; border: 1px solid #dbeafe; background: #3b82f6; color: white; min-width: 140px;">المجال</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${tableRows}
+                                </tbody>
+                            </table>
                         </div>
 
-                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-                            <thead>
-                                <tr>
-                                    <th style="padding: 10px; border: 1px solid #dcfce7; background: #22c55e; color: white; width: 40px;">م</th>
-                                    <th style="padding: 10px; border: 1px solid #dcfce7; background: #22c55e; color: white; width: 80px;">الأسبوع</th>
-                                    <th style="padding: 10px; border: 1px solid #dcfce7; background: #22c55e; color: white; width: 80px;">اليوم</th>
-                                    <th style="padding: 10px; border: 1px solid #dcfce7; background: #22c55e; color: white; width: 100px;">التاريخ</th>
-                                    <th style="padding: 10px; border: 1px solid #dcfce7; background: #22c55e; color: white;">الصف</th>
-                                    <th style="padding: 10px; border: 1px solid #dcfce7; background: #22c55e; color: white; width: 60px;">الحصة</th>
-                                    <th style="padding: 10px; border: 1px solid #dcfce7; background: #22c55e; color: white; width: 140px;">المعلمة الغائبة</th>
-                                    <th style="padding: 10px; border: 1px solid #dcfce7; background: #22c55e; color: white; min-width: 200px;">ما تم تنفيذه</th>
-                                    <th style="padding: 10px; border: 1px solid #dcfce7; background: #22c55e; color: white; min-width: 140px;">المجال</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ${tableRows}
-                            </tbody>
-                        </table>
-
-                        <div style="margin-top: 40px; text-align: center;">
-                            <div style="display: inline-block; text-align: center;">
-                                <p style="margin-bottom: 40px; font-weight: bold; color: #166534;">مديرة المدرسة</p>
-                                <div style="border-top: 2px solid #166534; padding-top: 8px;">
-                                    <p style="margin: 0; font-size: 12px; color: #166534;">هديل الطيار</p>
+                        <!-- التعديل: إضافة اسم المديرة والختم لتقارير الحصص -->
+                        <div style="margin-top: auto; padding-top: 40px; border-top: 2px solid #dbeafe;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; text-align: center;">
+                                <div style="flex: 1; text-align: left;">
+                                    <p style="margin-bottom: 10px; font-weight: bold; color: #1e40af; font-size: 14px;">مديرة المدرسة</p>
+                                    <p style="margin: 0; font-size: 13px; color: #1e40af;">هديل عبدالله الطيار</p>
                                 </div>
+                                <div style="flex: 1;">
+                                    <p style="margin-bottom: 10px; font-weight: bold; color: #1e40af; font-size: 14px;">الختم</p>
+                                </div>
+                                <div style="flex: 1;"></div>
                             </div>
                         </div>
                     `;
@@ -1292,8 +1266,7 @@
                         scale: 2,
                         backgroundColor: "#ffffff",
                         useCORS: true,
-                        logging: false,
-                        allowTaint: true
+                        logging: false
                     });
 
                     document.body.removeChild(printElement);
@@ -1318,123 +1291,6 @@
                     showToast('حدث خطأ أثناء التصدير', 'err');
                 }
             });
-        }
-
-        function initializeHijriCalendar() {
-            const hijriInputs = document.querySelectorAll('.hijri-date-input');
-            const calendars = document.querySelectorAll('.hijri-calendar');
-
-            hijriInputs.forEach((input, index) => {
-                const calendar = calendars[index];
-                const toggle = input.parentElement.querySelector('.hijri-toggle');
-
-                // فتح التقويم
-                toggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    calendar.classList.toggle('active');
-                    if (calendar.classList.contains('active')) {
-                        renderHijriCalendar(calendar, input);
-                    }
-                });
-
-                // إغلاق التقويم عند النقر خارجها
-                document.addEventListener('click', function(e) {
-                    if (!calendar.contains(e.target) && e.target !== toggle) {
-                        calendar.classList.remove('active');
-                    }
-                });
-
-                // منع إغلاق التقويم عند النقر داخلها
-                calendar.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
-            });
-
-            // تهيئة أزرار التنقل في التقويم
-            document.querySelectorAll('.hijri-calendar').forEach(calendar => {
-                const prevYear = calendar.querySelector('.prev-year');
-                const prevMonth = calendar.querySelector('.prev-month');
-                const nextMonth = calendar.querySelector('.next-month');
-                const nextYear = calendar.querySelector('.next-year');
-                const todayBtn = calendar.querySelector('.today-btn');
-
-                prevYear.addEventListener('click', function() {
-                    currentHijriYear--;
-                    renderHijriCalendar(calendar, calendar.associatedInput);
-                });
-
-                prevMonth.addEventListener('click', function() {
-                    currentHijriMonth--;
-                    if (currentHijriMonth < 1) {
-                        currentHijriMonth = 12;
-                        currentHijriYear--;
-                    }
-                    renderHijriCalendar(calendar, calendar.associatedInput);
-                });
-
-                nextMonth.addEventListener('click', function() {
-                    currentHijriMonth++;
-                    if (currentHijriMonth > 12) {
-                        currentHijriMonth = 1;
-                        currentHijriYear++;
-                    }
-                    renderHijriCalendar(calendar, calendar.associatedInput);
-                });
-
-                nextYear.addEventListener('click', function() {
-                    currentHijriYear++;
-                    renderHijriCalendar(calendar, calendar.associatedInput);
-                });
-
-                todayBtn.addEventListener('click', function() {
-                    const todayHijri = getTodayHijri();
-                    calendar.associatedInput.value = todayHijri;
-                    calendar.classList.remove('active');
-                    showToast('تم اختيار اليوم');
-                });
-            });
-        }
-
-        function renderHijriCalendar(calendar, input) {
-            calendar.associatedInput = input;
-
-            const monthYear = calendar.querySelector('.hijri-month-year');
-            const daysContainer = calendar.querySelector('.hijri-days');
-
-            const monthNames = [
-                'محرم', 'صفر', 'ربيع الأول', 'ربيع الآخر', 'جمادى الأولى', 'جمادى الآخرة',
-                'رجب', 'شعبان', 'رمضان', 'شوال', 'ذو القعدة', 'ذو الحجة'
-            ];
-
-            monthYear.textContent = `${monthNames[currentHijriMonth - 1]} ${currentHijriYear}`;
-
-            // هذا مثال بسيط - في التطبيق الحقيقي تحتاج مكتبة للتقويم الهجري
-            const daysInMonth = 30; // تقريباً
-
-            let daysHTML = '';
-            for (let i = 1; i <= daysInMonth; i++) {
-                daysHTML += `<div class="hijri-day">${i}</div>`;
-            }
-
-            daysContainer.innerHTML = daysHTML;
-
-            // إضافة حدث النقر لكل يوم
-            daysContainer.querySelectorAll('.hijri-day').forEach(dayElement => {
-                dayElement.addEventListener('click', function() {
-                    const day = this.textContent;
-                    const selectedDate = `${currentHijriYear}/${currentHijriMonth}/${day}`;
-                    input.value = selectedDate;
-                    calendar.classList.remove('active');
-                    showToast('تم اختيار التاريخ');
-                });
-            });
-        }
-
-        function getTodayHijri() {
-            // هذه دالة مبسطة - في التطبيق الحقيقي تحتاج مكتبة للتحويل
-            const today = new Date();
-            return `1447/${today.getMonth() + 1}/${today.getDate()}`;
         }
     </script>
 </body>
