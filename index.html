@@ -313,7 +313,7 @@
     <main class="container">
         <section id="home" class="page active">
             <h1>نظام التقارير المدرسية</h1>
-            <p>مرحباً بالمعلمات الكريمات في منصة الابتدائية السابعة بمحافظة الوجه لتوثيق الأنشطة والمبادرات والحصص بكفاءة وسهولة.</p>
+            <p>اهلا بالمعلمات والاداريات في منصة الابتدائية السابعة بمحافظة الوجه لتوثيق الأنشطة والمبادرات والحصص بكفاءة وسهولة.</p>
         </section>
         
         <section id="activities" class="page">
@@ -519,7 +519,7 @@
     
     <footer class="site-footer">
         <p><strong>مديرة المدرسة:</strong> هديل الطيار</p>
-        <p><strong>تصميم الموقع:</strong> أ. نوير حسين الربيض</p>
+        <p><strong>تصميم الموقع:</strong> نوير حسين الربيض</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -710,15 +710,15 @@
                                 <h1 style="color: #1e40af; font-size: 24px; margin: 0; font-weight: 900; border-bottom: 2px solid #60a5fa; padding-bottom: 10px;">تقرير النشاط المدرسي</h1>
                             </div>
                             <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold; width: 30%;">اسم البرنامج</td><td style="padding: 10px; border: 1px solid #dbeafe;">${data.title}</td></tr>
-                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">المنفذ</td><td style="padding: 10px; border: 1px solid #dbeafe;">${data.owner}</td></tr>
-                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">عدد المستفيدين</td><td style="padding: 10px; border: 1px solid #dbeafe;">${data.count || 'غير محدد'}</td></tr>
-                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">التاريخ</td><td style="padding: 10px; border: 1px solid #dbeafe;">${data.date}</td></tr>
-                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">المكان</td><td style="padding: 10px; border: 1px solid #dbeafe;">${data.place || 'غير محدد'}</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold; width: 30%; color: #1e40af;">اسم البرنامج</td><td style="padding: 10px; border: 1px solid #dbeafe; color: #000000;">${data.title}</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold; color: #1e40af;">المنفذ</td><td style="padding: 10px; border: 1px solid #dbeafe; color: #000000;">${data.owner}</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold; color: #1e40af;">عدد المستفيدين</td><td style="padding: 10px; border: 1px solid #dbeafe; color: #000000;">${data.count || 'غير محدد'}</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold; color: #1e40af;">التاريخ</td><td style="padding: 10px; border: 1px solid #dbeafe; color: #000000;">${data.date}</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold; color: #1e40af;">المكان</td><td style="padding: 10px; border: 1px solid #dbeafe; color: #000000;">${data.place || 'غير محدد'}</td></tr>
                             </table>
-                            ${data.goals ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 8px; border-right: 3px solid #3b82f6; padding-right: 8px;">الأهداف</h4><div style="padding: 12px; background: #f0f9ff; border-radius: 6px; border: 1px solid #dbeafe;">${data.goals}</div></div>` : ''}
-                            ${data.desc ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 8px; border-right: 3px solid #3b82f6; padding-right: 8px;">وصف النشاط</h4><div style="padding: 12px; background: #f0f9ff; border-radius: 6px; border: 1px solid #dbeafe;">${data.desc}</div></div>` : ''}
-                            ${witness.length > 0 ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 12px; border-right: 3px solid #3b82f6; padding-right: 8px;">صور الشواهد</h4><div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">${witness.map(w => `<div style="text-align: center; border: 1px solid #dbeafe; border-radius: 6px; padding: 8px; background: #f0f9ff;"><img src="${w.url}" crossorigin="anonymous" style="max-width: 100%; max-height: 150px; object-fit: contain;"><p style="margin-top: 8px; font-size: 12px; color: #1e40af;">شاهد النشاط</p></div>`).join('')}</div></div>` : ''}
+                            ${data.goals ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 8px; border-right: 3px solid #3b82f6; padding-right: 8px;">الأهداف</h4><div style="padding: 12px; background: #f0f9ff; border-radius: 6px; border: 1px solid #dbeafe; color: #000000;">${data.goals}</div></div>` : ''}
+                            ${data.desc ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 8px; border-right: 3px solid #3b82f6; padding-right: 8px;">وصف النشاط</h4><div style="padding: 12px; background: #f0f9ff; border-radius: 6px; border: 1px solid #dbeafe; color: #000000;">${data.desc}</div></div>` : ''}
+                            ${witness.length > 0 ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 12px; border-right: 3px solid #3b82f6; padding-right: 8px;">صور الشواهد</h4><div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">${witness.map(w => `<div style="text-align: center; border: 1px solid #dbeafe; border-radius: 6px; padding: 8px; background: #f0f9ff;"><img src="${w.url}" crossorigin="anonymous" style="max-width: 100%; max-height: 120px; object-fit: contain;"></div>`).join('')}</div></div>` : ''}
                         </div>
                         <div style="margin-top: auto; padding-top: 40px; border-top: 2px solid #dbeafe;">
                             <div style="display:flex; justify-content:space-between; align-items:center; gap:30px; direction:ltr;">
@@ -768,15 +768,15 @@
                                 <h1 style="color: #1e40af; font-size: 24px; margin: 0; font-weight: 900; border-bottom: 2px solid #60a5fa; padding-bottom: 10px;">تقرير المبادرة المدرسية</h1>
                             </div>
                             <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold; width: 30%;">اسم المبادرة</td><td style="padding: 10px; border: 1px solid #dbeafe;">${data.title}</td></tr>
-                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">المنفذ</td><td style="padding: 10px; border: 1px solid #dbeafe;">${data.owner}</td></tr>
-                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">عدد المستفيدين</td><td style="padding: 10px; border: 1px solid #dbeafe;">${data.count || 'غير محدد'}</td></tr>
-                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">التاريخ</td><td style="padding: 10px; border: 1px solid #dbeafe;">${data.date}</td></tr>
-                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold;">المكان</td><td style="padding: 10px; border: 1px solid #dbeafe;">${data.place || 'غير محدد'}</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold; width: 30%; color: #1e40af;">اسم المبادرة</td><td style="padding: 10px; border: 1px solid #dbeafe; color: #000000;">${data.title}</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold; color: #1e40af;">المنفذ</td><td style="padding: 10px; border: 1px solid #dbeafe; color: #000000;">${data.owner}</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold; color: #1e40af;">عدد المستفيدين</td><td style="padding: 10px; border: 1px solid #dbeafe; color: #000000;">${data.count || 'غير محدد'}</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold; color: #1e40af;">التاريخ</td><td style="padding: 10px; border: 1px solid #dbeafe; color: #000000;">${data.date}</td></tr>
+                                <tr><td style="padding: 10px; border: 1px solid #dbeafe; background: #f0f9ff; font-weight: bold; color: #1e40af;">المكان</td><td style="padding: 10px; border: 1px solid #dbeafe; color: #000000;">${data.place || 'غير محدد'}</td></tr>
                             </table>
-                            ${data.goals ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 8px; border-right: 3px solid #3b82f6; padding-right: 8px;">الأهداف</h4><div style="padding: 12px; background: #f0f9ff; border-radius: 6px; border: 1px solid #dbeafe;">${data.goals}</div></div>` : ''}
-                            ${data.desc ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 8px; border-right: 3px solid #3b82f6; padding-right: 8px;">وصف المبادرة</h4><div style="padding: 12px; background: #f0f9ff; border-radius: 6px; border: 1px solid #dbeafe;">${data.desc}</div></div>` : ''}
-                            ${witnessInitiative.length > 0 ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 12px; border-right: 3px solid #3b82f6; padding-right: 8px;">صور الشواهد</h4><div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">${witnessInitiative.map(w => `<div style="text-align: center; border: 1px solid #dbeafe; border-radius: 6px; padding: 8px; background: #f0f9ff;"><img src="${w.url}" crossorigin="anonymous" style="max-width: 100%; max-height: 150px; object-fit: contain;"><p style="margin-top: 8px; font-size: 12px; color: #1e40af;">شاهد المبادرة</p></div>`).join('')}</div></div>` : ''}
+                            ${data.goals ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 8px; border-right: 3px solid #3b82f6; padding-right: 8px;">الأهداف</h4><div style="padding: 12px; background: #f0f9ff; border-radius: 6px; border: 1px solid #dbeafe; color: #000000;">${data.goals}</div></div>` : ''}
+                            ${data.desc ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 8px; border-right: 3px solid #3b82f6; padding-right: 8px;">وصف المبادرة</h4><div style="padding: 12px; background: #f0f9ff; border-radius: 6px; border: 1px solid #dbeafe; color: #000000;">${data.desc}</div></div>` : ''}
+                            ${witnessInitiative.length > 0 ? `<div style="margin-bottom: 20px;"><h4 style="color: #1e40af; margin-bottom: 12px; border-right: 3px solid #3b82f6; padding-right: 8px;">صور الشواهد</h4><div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">${witnessInitiative.map(w => `<div style="text-align: center; border: 1px solid #dbeafe; border-radius: 6px; padding: 8px; background: #f0f9ff;"><img src="${w.url}" crossorigin="anonymous" style="max-width: 100%; max-height: 120px; object-fit: contain;"></div>`).join('')}</div></div>` : ''}
                         </div>
                         <div style="margin-top: auto; padding-top: 40px; border-top: 2px solid #dbeafe;">
                             <div style="display:flex; justify-content:space-between; align-items:center; gap:30px; direction:ltr;">
@@ -889,15 +889,15 @@ let tableRows = '';
 sessions.forEach((session, index) => {
     tableRows += `
         <tr>
-            <td style="padding: 8px; border: 1px solid #dbeafe;">${index + 1}</td>
-            <td style="padding: 8px; border: 1px solid #dbeafe;">${session.week || ''}</td>
-            <td style="padding: 8px; border: 1px solid #dbeafe;">${session.day}</td>
-            <td style="padding: 8px; border: 1px solid #dbeafe;">${session.date}</td>
-            <td style="padding: 8px; border: 1px solid #dbeafe;">${session.className}</td>
-            <td style="padding: 8px; border: 1px solid #dbeafe;">${session.number}</td>
-            <td style="padding: 8px; border: 1px solid #dbeafe;">${session.teacher}</td>
-            <td style="padding: 8px; border: 1px solid #dbeafe; text-align: right;">${session.activities}</td>
-            <td style="padding: 8px; border: 1px solid #dbeafe; text-align: right;">${session.fields}</td>
+            <td style="padding: 8px; border: 1px solid #dbeafe; color: #000000;">${index + 1}</td>
+            <td style="padding: 8px; border: 1px solid #dbeafe; color: #000000;">${session.week || ''}</td>
+            <td style="padding: 8px; border: 1px solid #dbeafe; color: #000000;">${session.day}</td>
+            <td style="padding: 8px; border: 1px solid #dbeafe; color: #000000;">${session.date}</td>
+            <td style="padding: 8px; border: 1px solid #dbeafe; color: #000000;">${session.className}</td>
+            <td style="padding: 8px; border: 1px solid #dbeafe; color: #000000;">${session.number}</td>
+            <td style="padding: 8px; border: 1px solid #dbeafe; color: #000000;">${session.teacher}</td>
+            <td style="padding: 8px; border: 1px solid #dbeafe; text-align: right; color: #000000;">${session.activities}</td>
+            <td style="padding: 8px; border: 1px solid #dbeafe; text-align: right; color: #000000;">${session.fields}</td>
         </tr>`;
 });
 printElement.innerHTML = `
