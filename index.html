@@ -271,6 +271,25 @@
         .today-btn { margin-top: 10px; padding: 8px 12px; background: var(--light); color: var(--dark); border: none; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%; transition: all 0.2s; font-size: 14px; }
         .today-btn:hover { background: var(--accent); color: white; }
 
+        /* صفحة الباركود */
+        .qr-box {
+            max-width: 520px;
+            margin: 0 auto;
+        }
+        .qr-preview {
+            margin-top: 16px;
+            text-align: center;
+        }
+        .qr-frame {
+            display: inline-block;
+            padding: 12px;
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #dbeafe;
+            min-width: 240px;
+            min-height: 240px;
+        }
+
         @media (min-width: 768px) {
             .header-logo img { height: 80px; }
             .nav-btn { padding: 12px 24px; font-size: 15px; flex: 0 1 auto; }
@@ -308,6 +327,7 @@
             <button class="nav-btn" id="navActivities">تقارير الأنشطة</button>
             <button class="nav-btn" id="navInitiatives">تقارير المبادرات</button>
             <button class="nav-btn" id="navSessions">تقارير الحصص</button>
+            <button class="nav-btn" id="navQR">تحويل ملفات لباركود</button>
         </div>
     </nav>
     
@@ -540,6 +560,33 @@
                 </table>
             </div>
         </section>
+
+        <!-- صفحة تحويل الملفات لباركود -->
+        <section id="qr" class="page">
+            <h1>مولّد باركود الملفات (صور / فيديو / PDF)</h1>
+            <p>
+                لتحويل <strong>صورة أو مقطع أو ملف PDF</strong> إلى باركود قابل للمسح:
+                <br>
+                1️⃣ ارفعي الملف في منصة (مثل درايف / ون درايف / مدرستي).<br>
+                2️⃣ خذي <strong>رابط المشاركة</strong> الخاص بالملف.<br>
+                3️⃣ الصقي الرابط هنا وسيتم توليد باركود له.
+            </p>
+            <div class="qr-box">
+                <form id="qrForm" class="form">
+                    <label>رابط الملف (صورة / فيديو / PDF) *
+                        <textarea id="qrInput" class="input" required placeholder="الصقي هنا رابط الملف بعد رفعه (يجب أن يبدأ بـ https://)"></textarea>
+                    </label>
+                    <div class="actions">
+                        <button class="btn" type="button" id="generateQR">توليد الباركود</button>
+                        <button class="btn" type="button" id="downloadQR">تحميل الباركود كصورة</button>
+                    </div>
+                </form>
+                <div class="qr-preview">
+                    <div id="qrContainer" class="qr-frame"></div>
+                    <p class="hint">بعد توليد الباركود يمكنك طباعته وإرفاقه في تقارير الأنشطة والمبادرات.</p>
+                </div>
+            </div>
+        </section>
     </main>
     
     <footer class="site-footer">
@@ -549,6 +596,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- مكتبة توليد QR -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     
     <script>
         let witness = [];
@@ -567,6 +616,7 @@
             initializeSessionManagement();
             initializeSessionsExport();
             initializeHijriCalendar();
+            initializeQRCodePage(); // صفحة الباركود
         });
         
         function loadSessions() {
@@ -595,6 +645,7 @@
             document.getElementById('navActivities').addEventListener('click', function() { showPage('activities'); setActiveNav(this); });
             document.getElementById('navInitiatives').addEventListener('click', function() { showPage('initiatives'); setActiveNav(this); });
             document.getElementById('navSessions').addEventListener('click', function() { showPage('sessions'); setActiveNav(this); });
+            document.getElementById('navQR').addEventListener('click', function() { showPage('qr'); setActiveNav(this); });
         }
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
@@ -1268,6 +1319,73 @@
         function getTodayHijri() {
             const today = new Date();
             return `1447/${today.getMonth() + 1}/${today.getDate()}`;
+        }
+
+        /* صفحة مولّد باركود الملفات */
+        function initializeQRCodePage() {
+            const input = document.getElementById('qrInput');
+            const generateBtn = document.getElementById('generateQR');
+            const downloadBtn = document.getElementById('downloadQR');
+            const qrContainer = document.getElementById('qrContainer');
+
+            if (!input || !generateBtn || !qrContainer) return;
+
+            // دعم UTF-8 (لنص الرابط، حتى لو فيه عربي)
+            if (window.QRCode && !QRCode.__utf8Patched) {
+                QRCode.__utf8Patched = true;
+                QRCode.stringToBytes = function(s) {
+                    return unescape(encodeURIComponent(s));
+                };
+            }
+
+            let qrInstance = null;
+
+            generateBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                let value = (input.value || '').trim();
+                if (!value) {
+                    showToast('الصقي رابط الملف أولاً', 'warn');
+                    return;
+                }
+                // تأكد أنه رابط حقيقي
+                if (!/^https?:\/\//i.test(value)) {
+                    showToast('الرابط يجب أن يبدأ بـ http:// أو https://', 'warn');
+                    return;
+                }
+
+                qrContainer.innerHTML = '';
+                qrInstance = new QRCode(qrContainer, {
+                    text: value,
+                    width: 220,
+                    height: 220,
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+                showToast('تم توليد الباركود');
+            });
+
+            downloadBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const canvas = qrContainer.querySelector('canvas');
+                const img = qrContainer.querySelector('img');
+                if (!canvas && !img) {
+                    showToast('ولّدي الباركود أولاً', 'warn');
+                    return;
+                }
+                let exportCanvas = canvas;
+                if (!exportCanvas && img) {
+                    exportCanvas = document.createElement('canvas');
+                    exportCanvas.width = img.naturalWidth || 220;
+                    exportCanvas.height = img.naturalHeight || 220;
+                    const ctx = exportCanvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, exportCanvas.width, exportCanvas.height);
+                }
+                const link = document.createElement('a');
+                link.href = exportCanvas.toDataURL('image/png');
+                link.download = 'qrcode.png';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
         }
     </script>
 </body>
